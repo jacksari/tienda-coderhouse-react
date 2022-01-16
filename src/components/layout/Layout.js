@@ -6,7 +6,9 @@ function Layout({children}) {
     return (
         <>
             <NavBar/>
-            {children}
+            <div className="container my-4">
+                {children}
+            </div>
             <Footer/>
         </>
     );
