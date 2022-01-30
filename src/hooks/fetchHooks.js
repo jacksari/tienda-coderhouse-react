@@ -7,13 +7,11 @@ function FetchHooks(url) {
             const resp = await fetch(url);
             const data = await resp.json();
             // Simular tiempo de carga de 2 segundos
-            setTimeout(()=>{
-                setState({
-                    data: data.courses.docs,
-                    loading: false,
-                    error: false
-                })
-            },2000)
+            setState({
+                data: data,
+                loading: false,
+                error: false
+            })
         })()
     }, []);
 

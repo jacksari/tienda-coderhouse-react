@@ -1,11 +1,12 @@
 import React from 'react';
+import {
+    Link
+} from "react-router-dom";
 
 function ItemNavLink({active = false, title, url = '/'}) {
     return (
         <li className="nav-item">
-            <a className={`nav-link ${active ? 'active' : ''}`} aria-current="page" href={url}>
-                { title }
-            </a>
+            <Link className={`nav-link ${active ? 'active' : ''}`} to={url}>{ title }</Link>
         </li>
     );
 }

@@ -1,13 +1,31 @@
-import ItemListContainer from "./components/ItemListContainer";
+import ItemListContainer from "./components/lecciones-curso/ItemListContainer";
 import Layout from "./components/layout/Layout";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemDetailContainer from "./components/item/ItemDetailContainer";
 import "./App.css";
+import {
+    BrowserRouter,
+    Routes,
+    Route
+} from "react-router-dom";
+import IndexPage from "./pages/IndexPage";
+import CategoryIndexPage from "./pages/CategoryIndexPage";
+import ProductIndexPage from "./pages/ProductIndexPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
+import ContactoPage from "./pages/ContactoPage";
+import CategoryDetailsPage from "./pages/CategoryDetailsPage";
 
 function App() {
   return (
-    <Layout>
-        <ItemDetailContainer/>
-    </Layout>
+      <BrowserRouter>
+          <Routes>
+              <Route path="/" element={<IndexPage/>}/>
+              <Route path="categorias" index element={<CategoryIndexPage/>} />
+              <Route path="categorias/:id" element={<CategoryDetailsPage/>} />
+              <Route path="productos" index element={<ProductIndexPage/>} />
+              <Route path="productos/:id" element={<ProductDetailsPage/>} />
+              <Route path="contacto" element={<ContactoPage/>} />
+          </Routes>
+      </BrowserRouter>
   );
 }
 

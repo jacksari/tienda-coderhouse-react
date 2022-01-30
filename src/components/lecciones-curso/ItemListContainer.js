@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ItemCount from "./counter/ItemCount";
+import ItemCount from "../counter/ItemCount";
 import ItemList from "./ItemList";
 
 function ItemListContainer({title}) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import FetchHooks from "../hooks/fetchHooks";
+import FetchHooks from "../../hooks/fetchHooks";
 import Item from "./Item";
 
 function ItemList(props) {
