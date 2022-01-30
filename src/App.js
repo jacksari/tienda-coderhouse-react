@@ -1,10 +1,12 @@
 import ItemListContainer from "./components/ItemListContainer";
 import Layout from "./components/layout/Layout";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import "./App.css";
 
 function App() {
   return (
     <Layout>
-        <ItemListContainer title="Lista de productos"/>
+        <ItemDetailContainer/>
     </Layout>
   );
 }

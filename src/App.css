@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+:root{
+  --color-primary: #f02e5e;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid-products{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width: 600px) {
+  .grid-products{
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 }
+@media screen and (min-width: 800px) {
+  .grid-products{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .grid-products{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+.item-product{
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3)
+}
+.item-product .img{
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+
+.item-product .card-product{
+  padding: 10px;
+}
+.item-product .title{
+  font-size: 14px;
+}
+.item-product .text{
+  font-size: 12px;
+}
+.container-btn{
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
-
-.App-link {
-  color: #61dafb;
+.item-product .btn-product{
+  background: var(--color-primary) ;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 14px;
+  border: 1px solid #f02e5e;
+  font-weight: 500;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container-image{
+  height: 150px;
+  position: relative;
+}
+.container-image img{
+  height: 100%;
+  object-fit: cover;
+}
+.container-image .text{
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  background: #f02e5e;
+  padding: 2px 4px;
+  border-radius: 5px;
+  color: #fff;
+}
+.btn-carrito{
+  color: var(--color-primary) !important;
+  background: #fff !important;
+  border: 1px solid #f02e5e;
+}
+.teacher-title{
+  font-size: 14px;
+  font-weight: 500;
+  color: gray;
+  margin: 0;
+}
+.container-teacher-name{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+.fa-star{
+  color: gold;
 }
