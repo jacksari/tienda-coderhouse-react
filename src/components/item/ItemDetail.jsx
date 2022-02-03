@@ -4,7 +4,6 @@ import {
 } from "react-router-dom";
 
 function ItemDetail({product}) {
-    //console.log(product)
     const { title, img, category, teacher, stars, slug, price } = product;
     return (
         <div  className="item-product">

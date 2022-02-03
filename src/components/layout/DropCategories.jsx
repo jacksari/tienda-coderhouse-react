@@ -1,5 +1,8 @@
 import React from 'react';
 import FetchHooks from "../../hooks/fetchHooks";
+import {
+    Link
+} from "react-router-dom";
 
 function DropCategories(props) {
     const { data, loading, error } = FetchHooks('https://service.dened.org/api/categories');
@@ -11,8 +14,10 @@ function DropCategories(props) {
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 {
-                    data.categories && data.categories.map((category, index) => (
-                        <li key={index}><a className="dropdown-item" href={`/categorias/${category.uid}`}>{ category.title }</a></li>
+                    !loading && data.categories.map((category, index) => (
+                        <li key={index}>
+                            <Link className="dropdown-item" to={`/categorias/${category.uid}`}>{ category.title }</Link>
+                        </li>
                     ))
                 }
             </ul>

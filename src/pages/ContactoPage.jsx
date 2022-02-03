@@ -8,6 +8,9 @@ function ContactoPage() {
         <Layout>
             <TitlePage title="Página de contacto"/>
             <Breadcrumb title="Contacto" page="/contacto"/>
+            <div className="container">
+                <h5>Agregar página de contacto</h5>
+            </div>
         </Layout>
     );
 }

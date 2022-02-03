@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function FetchHooks(url) {
-    const [state, setState] = useState({data: [], loading: true, error: null});
+    const [state, setState] = useState({data: [], loading: true, error: null, reload: false});
     useEffect(() => {
         (async () => {
             const resp = await fetch(url);
@@ -13,7 +13,7 @@ function FetchHooks(url) {
                 error: false
             })
         })()
-    }, []);
+    }, [state.reload]);
 
     return state;
 }
