@@ -1,6 +1,3 @@
-import ItemListContainer from "./components/lecciones-curso/ItemListContainer";
-import Layout from "./components/layout/Layout";
-import ItemDetailContainer from "./components/item/ItemDetailContainer";
 import "./App.css";
 import {
     BrowserRouter,
@@ -14,20 +11,23 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ContactoPage from "./pages/ContactoPage";
 import CategoryDetailsPage from "./pages/CategoryDetailsPage";
 import CartPage from "./pages/CartPage";
+import CartState from "./context/cart/cartState";
 
 function App() {
   return (
-      <BrowserRouter>
-          <Routes>
-              <Route path="/" element={<IndexPage/>}/>
-              <Route path="categorias" index element={<CategoryIndexPage/>} />
-              <Route path="categorias/:id" element={<CategoryDetailsPage/>} />
-              <Route path="productos" index element={<ProductIndexPage/>} />
-              <Route path="productos/:id" element={<ProductDetailsPage/>} />
-              <Route path="contacto" element={<ContactoPage/>} />
-              <Route path="cart" element={<CartPage/>} />
-          </Routes>
-      </BrowserRouter>
+      <CartState>
+          <BrowserRouter>
+              <Routes>
+                  <Route path="/" element={<IndexPage/>}/>
+                  <Route path="categorias" index element={<CategoryIndexPage/>} />
+                  <Route path="categorias/:id" element={<CategoryDetailsPage/>} />
+                  <Route path="productos" index element={<ProductIndexPage/>} />
+                  <Route path="productos/:id" element={<ProductDetailsPage/>} />
+                  <Route path="contacto" element={<ContactoPage/>} />
+                  <Route path="cart" element={<CartPage/>} />
+              </Routes>
+          </BrowserRouter>
+      </CartState>
   );
 }
 

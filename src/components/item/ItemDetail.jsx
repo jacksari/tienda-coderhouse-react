@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
     Link
 } from "react-router-dom";
 import ItemCount from "../counter/ItemCount";
+import cartContext from "../../context/cart/cartContext";
 
 
 function ItemDetail({product}) {
     const { title, img, category, teacher, stars, slug, price } = product;
+    const { addItem } = useContext(cartContext);
     const addCart = (value) => {
         console.log(`Se agregó al carrito ${value} unidades del producto ${title}`)
+        addItem(product, value)
     }
     return (
         <>

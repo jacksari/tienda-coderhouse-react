@@ -6,6 +6,7 @@ function ItemCount({ stock = 0, initial, onAdd }) {
     const [cartSuccess, setCartSuccess] = useState(false);
     const navigate = useNavigate();
 
+
     return (
         <div className="my-4">
             <p>STOCK: {stock}</p>
@@ -53,7 +54,7 @@ function ItemCount({ stock = 0, initial, onAdd }) {
                         type="button"
                         onClick={()=>{
                             // redireccionar al path /cart
-                            navigate('cart')
+                            navigate('../cart', { replace: true })
                         }}
                     >Finalizar compra</button>
                 )
