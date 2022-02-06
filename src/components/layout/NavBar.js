@@ -27,6 +27,7 @@ function NavBar(props) {
                         <ItemNavLink  title="Productos" url={'/productos'}/>
                         <ItemNavLink  title="Categorías" url={'/categorias'}/>
                         <ItemNavLink  title="Contacto" url={'/contacto'}/>
+                        <ItemNavLink  title="Carrito" url={'/cart'}/>
                         <DropCategories/>
                     </ul>
                     <CartWidget/>

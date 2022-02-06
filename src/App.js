@@ -13,6 +13,7 @@ import ProductIndexPage from "./pages/ProductIndexPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ContactoPage from "./pages/ContactoPage";
 import CategoryDetailsPage from "./pages/CategoryDetailsPage";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="productos" index element={<ProductIndexPage/>} />
               <Route path="productos/:id" element={<ProductDetailsPage/>} />
               <Route path="contacto" element={<ContactoPage/>} />
+              <Route path="cart" element={<CartPage/>} />
           </Routes>
       </BrowserRouter>
   );

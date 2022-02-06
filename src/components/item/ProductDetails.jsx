@@ -41,7 +41,6 @@ function ProductDetails({course}) {
                             <p>{ teacher.title }</p>
                         </div>
                     </div>
-                    <ItemCount initial={0} stock={5} cart={[]} onAdd={()=>{}}/>
                 </div>
                 <div className="container-checkout">
                     <img src={img.url} alt=""/>
