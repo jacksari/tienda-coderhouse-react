@@ -8,7 +8,10 @@ function CartItem({cart}) {
         <div className="my-2 d-flex justify-content-between align-items-center border-bottom">
             <div>
                 <h3>{ item.title }</h3>
-                <p>Cantidad: { quantity }</p>
+                <div className="d-flex align-items-center">
+                    <p className="mr-2">Cantidad: { quantity }</p>
+                    <p>Precio: { item.price }</p>
+                </div>
             </div>
             <button type="button" onClick={()=>removeItem(item.uid)} className="btn btn-danger">Eliminar item</button>
         </div>

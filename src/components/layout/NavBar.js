@@ -1,5 +1,5 @@
 import React from 'react';
-import CartWidget from "../lecciones-curso/CartWidget";
+import CartWidget from "../item/CartWidget";
 import Logo from '../../logo.svg';
 import ItemNavLink from "./ItemNavLink";
 
