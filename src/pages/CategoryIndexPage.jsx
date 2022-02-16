@@ -4,7 +4,9 @@ import TitlePage from "../components/layout/TitlePage";
 import Breadcrumb from "../components/layout/Breadcrumb";
 import CategoryContainer from "../components/category/CategoryContainer";
 
-function CategoryIndexPage(props) {
+function CategoryIndexPage() {
+
+
 
     return (
         <Layout>

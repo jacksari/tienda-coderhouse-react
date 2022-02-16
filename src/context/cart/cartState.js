@@ -23,6 +23,7 @@ const CartState = ({children}) => {
             item,
             quantity: value
         }
+        console.log(product)
         dispatch({
             type: ADD_PRODUCT,
             payload: product

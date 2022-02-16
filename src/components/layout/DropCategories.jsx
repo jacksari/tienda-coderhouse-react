@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import FetchHooks from "../../hooks/fetchHooks";
 import {
     Link
 } from "react-router-dom";
+import productContext from "../../context/product/productContext";
 
-function DropCategories(props) {
-    const { data, loading, error } = FetchHooks('https://service.dened.org/api/categories');
+function DropCategories() {
+    const { categories } = useContext(productContext);
     return (
         <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -14,9 +15,9 @@ function DropCategories(props) {
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 {
-                    !loading && data.categories.map((category, index) => (
+                    categories.map((category, index) => (
                         <li key={index}>
-                            <Link className="dropdown-item" to={`/categorias/${category.uid}`}>{ category.title }</Link>
+                            <Link className="dropdown-item" to={`/categorias/${category.id}`}>{ category.name }</Link>
                         </li>
                     ))
                 }

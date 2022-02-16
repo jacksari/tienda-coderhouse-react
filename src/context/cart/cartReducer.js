@@ -21,7 +21,7 @@ const cartReducer = (state,action) => {
             }
         case REMOVE_PRODUCT:
             // Función para eliminar un producto por id
-            const products1 = state.carts.filter(cart => cart.item.uid !== action.payload)
+            const products1 = state.carts.filter(cart => cart.item.id !== action.payload)
             let countCartRemove = 0;
             let totalPriceRemove = 0
             products1.forEach(cart => {
@@ -39,10 +39,10 @@ const cartReducer = (state,action) => {
         case ADD_PRODUCT:
             // Función para agregar producto y validar existencia
             let newProducts = []
-            const pro = state.carts.find(cart => cart.item.uid === action.payload.item.uid)
+            const pro = state.carts.find(cart => cart.item.id === action.payload.item.id)
             if(pro){
                 newProducts = state.carts.map(cart => {
-                    if(cart.item.uid === action.payload.item.uid){
+                    if(cart.item.id === action.payload.item.id){
                         console.log('existe')
                         return {
                             item: cart.item,

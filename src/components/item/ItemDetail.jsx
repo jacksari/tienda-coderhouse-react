@@ -1,41 +1,53 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
     Link
 } from "react-router-dom";
 import ItemCount from "../counter/ItemCount";
 import cartContext from "../../context/cart/cartContext";
+import productContext from "../../context/product/productContext";
 
 
 const ItemDetail = ({product}) => {
-    const { title, img, category, teacher, stars, slug, price } = product;
+    const { title, image, category, teacher, stars, id, price, stock, slug } = product;
     const { addItem } = useContext(cartContext);
+    const [nameCategory, setNameCategory] = useState(null);
+
+    const { categories } = useContext(productContext);
+
     const addCart = (value) => {
         console.log(`Se agregó al carrito ${value} unidades del producto ${title}`)
         addItem(product, value)
     }
+    useEffect(() => {
+        if(category){
+            let cat = categories.filter(categoryItem => categoryItem.id === category)[0];
+            setNameCategory(cat.name)
+        }
+    }, [category]);
+
     return (
         <>
             <div  className="item-product">
                 <div className="container-image">
                     <Link to={`/productos/${slug}`} className=" link">
-                        <img src={img.url} className="card-img-top" alt=""/>
-                        <p className="text">{ category.title }</p>
+                        <img src={image} className="card-img-top" alt=""/>
+                        <p className="text">{ nameCategory }</p>
                     </Link>
                 </div>
                 <div className="card-product">
-                    <Link to={`/productos/${slug}`} className="title">{ title }</Link>
+                    <Link to={`/productos/${id}`} className="title">{ title }</Link>
                     <div className="container-teacher-name">
-                        <h3 className="teacher-title">Prof: { teacher.user.nombre } { teacher.user.apellidos }</h3>
-                        <p className="m-0"><i className="fas fa-star"/> { stars.toFixed(2) }</p>
+                        <h3 className="teacher-title">Prof: { teacher }</h3>
+                        <p className="m-0"><i className="fas fa-star"/> { stars }</p>
                     </div>
                     <div className="container-btn">
                         <button type="button" className="btn-product btn-carrito">Agregar al carrito</button>
-                        <button type="button" className="btn-product">Comprar ${ price }.00</button>
+                        <button type="button" className="btn-product">Comprar ${ price }</button>
                     </div>
                 </div>
             </div>
 
-            <ItemCount initial={0} stock={Math.floor(Math.random() * (10 - 2)) + 2} onAdd={addCart}/>
+            <ItemCount initial={0} stock={stock} onAdd={addCart}/>
         </>
     );
 }

@@ -6,7 +6,7 @@ import cartContext from "../context/cart/cartContext";
 import CartItem from "../components/item/CartItem";
 import {Link} from "react-router-dom";
 
-function CartPage(props) {
+function CartPage() {
     const { carts, clear, cartCount, totalPrice } = useContext(cartContext);
     return (
         <Layout>

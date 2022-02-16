@@ -4,11 +4,11 @@ import {
 } from "react-router-dom";
 
 function CategoryItem({category}) {
-    const { title, slug, uid, career } = category;
+    const { name, id } = category;
     return (
-        <Link className="item-category" to={`/categorias/${uid}`} >
-            <h3>{title}</h3>
-            <p>{ career.title }</p>
+        <Link className="item-category" to={`/categorias/${id}`} >
+            <h3>{name}</h3>
+            <p>{ 'Odontología' }</p>
         </Link>
     );
 }

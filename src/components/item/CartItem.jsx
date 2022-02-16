@@ -13,7 +13,7 @@ function CartItem({cart}) {
                     <p>Precio: { item.price }</p>
                 </div>
             </div>
-            <button type="button" onClick={()=>removeItem(item.uid)} className="btn btn-danger">Eliminar item</button>
+            <button type="button" onClick={()=>removeItem(item.id)} className="btn btn-danger">Eliminar item</button>
         </div>
     );
 }

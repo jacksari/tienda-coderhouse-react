@@ -1,21 +1,20 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import FetchHooks from "../../hooks/fetchHooks";
 import ItemDetail from "./ItemDetail";
+import productContext from "../../context/product/productContext";
 
 function ItemDetailContainer(props) {
     // Peticion al servidor
-    const { data, loading, error } = FetchHooks('https://service.dened.org/api/courses/public?page=1&limit=8');
+    const { products } = useContext(productContext);
     return (
         <div className="container">
             {
-                !loading ? <div className="grid-products my-4">
+                 <div className="grid-products my-4">
                     {
-                        data.courses.docs.map((product, index) => (
+                        products.map((product, index) => (
                             <ItemDetail key={index} product={product}/>
                         ))
                     }
-                </div> : <div className="mt-4">
-                    <h2>Cargando...</h2>
                 </div>
             }
         </div>
