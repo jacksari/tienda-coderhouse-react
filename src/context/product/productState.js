@@ -45,7 +45,13 @@ const ProductState = ({children}) => {
             const db = getFirestore();
             const itemsCollection = db.collection('product');
             itemsCollection.get().then((querySnapshot) => {
-                const data = querySnapshot.docs.map(doc => doc.data());
+                const data = querySnapshot.docs.map(doc => {
+                    return {
+                        ...doc.data(),
+                        id: doc.id,
+                    }
+                });
+                console.log(data)
                 dispatch({
                     type: GET_PRODUCTS,
                     payload: data

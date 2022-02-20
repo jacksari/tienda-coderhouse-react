@@ -1,11 +1,23 @@
 import {
-    ADD_PRODUCT, DELETE_TOTAL_PRODUCTS, INIT_CART, REMOVE_PRODUCT
+    ADD_PRODUCT, CHECKOUT_SUCCESS, DELETE_TOTAL_PRODUCTS, INIT_CART, REMOVE_PRODUCT, RESET_CART
 } from "../types";
 import {refreshLocalStorage} from "../../config/refreshLocalStorage";
 
 const cartReducer = (state,action) => {
     switch (action.type) {
 
+        case CHECKOUT_SUCCESS:
+            return {
+                ...state,
+                checkoutSuccess: action.payload
+            }
+        case RESET_CART:
+            return {
+                ...state,
+                carts: [],
+                cartCount: 0,
+                totalPrice: 0,
+            }
         case INIT_CART:
             return {
                 ...state,
