@@ -69,6 +69,7 @@ const CartState = ({children}) => {
             console.log('id de order', id)
             // Actualizar stock
             carts.forEach( async (product) => {
+                // ACtualiza el producto por la cantidad de productos
                 await updateStock(product.item.id, product.item.stock - product.quantity)
             })
             resetCart();

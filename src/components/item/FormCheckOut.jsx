@@ -21,19 +21,23 @@ function FormCheckOut() {
 
     const submitFormCheckOut = () => {
 
-        const order = {
-                        buyer,
-                        items: carts.map(cart => {
-                            return {
-                                id: cart.item.id,
-                                title: cart.item.title,
-                                price: cart.item.price
-                            }
-                        }),
-                        date: firebase.firestore.Timestamp.fromDate(new Date()),
-                        total: totalPrice
-                    };
-        createOrder(order, carts)
+        if(buyer.name && buyer.phone && buyer.email){
+            const order = {
+                buyer,
+                items: carts.map(cart => {
+                    return {
+                        id: cart.item.id,
+                        title: cart.item.title,
+                        price: cart.item.price
+                    }
+                }),
+                date: firebase.firestore.Timestamp.fromDate(new Date()),
+                total: totalPrice
+            };
+            createOrder(order, carts)
+        } else{
+            console.log('debe ingresar datos del usuario')
+        }
     }
     return (
         <div>
