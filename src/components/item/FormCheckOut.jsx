@@ -47,17 +47,17 @@ function FormCheckOut() {
                     <div className="row">
                         <div className="col-4 mb-3">
                             <label htmlFor="exampleFormControlInput1" className="form-label">Nombre:</label>
-                            <input value={buyer.name} onChange={actualizarState} type="text" className="form-control" id="name"
+                            <input value={buyer.name} name="name" onChange={actualizarState} type="text" className="form-control" id="name"
                                    placeholder="Your name"/>
                         </div>
                         <div className="col-4 mb-3">
                             <label htmlFor="exampleFormControlInput1" className="form-label">Teléfono:</label>
-                            <input value={buyer.phone} onChange={actualizarState} type="text" className="form-control" id="phone"
+                            <input value={buyer.phone} name="phone" onChange={actualizarState} type="text" className="form-control" id="phone"
                                    placeholder="Your phone"/>
                         </div>
                         <div className="col-4 mb-3">
                             <label htmlFor="exampleFormControlInput1" className="form-label">Email:</label>
-                            <input value={buyer.email} onChange={actualizarState} type="email" className="form-control" id="email"
+                            <input value={buyer.email} name="email" onChange={actualizarState} type="email" className="form-control" id="email"
                                    placeholder="name@example.com"/>
                         </div>
                     </div>
